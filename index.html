@@ -9,16 +9,22 @@
 <!--<script src="js/bundle.js" type="text/javascript"></script>-->
 
 <!--<script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>-->
-<!--<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
 
 
-<a-scene physics=" driver: ammo; debug: true; debugDrawMode: 1;"
->
-    <a-entity id="head" camera look-controls wasd-controls="acceleration:280" position="0 1.6 0">
+<a-scene physics=" driver: ammo; debug: true; debugDrawMode: 1;">
+    <a-entity id="rig" movement-controls>
+    <a-entity id="head" camera look-controls
+              position="0 1.6 0">
         <a-entity cursor="rayOrigin: mouse"></a-entity>
     </a-entity>
-<!--    <a-entity id="box" ammo-body cursor-listener position="0 2.5 4" geometry="primitive: box"-->
-<!--              material="color: blue"></a-entity>-->
+    </a-entity>
+    <!--    <a-entity light="type: ambient; color: #CCC"></a-entity>-->
+    <!--    <a-entity light="type: point; intensity: 0.75; distance: 50; decay: 2"-->
+    <!--              position="0 2 2"></a-entity>-->
+
+    <!--    <a-entity id="box" ammo-body cursor-listener position="0 2.5 4" geometry="primitive: box"-->
+    <!--              material="color: blue"></a-entity>-->
     <!--    <a-entity id="nyan" dynamic-body="shape: hull" obj-model="obj: url(nyan-cat.obj)"></a-entity>-->
 
     <a-assets>
@@ -30,7 +36,7 @@
 
     </a-assets>
 
-    <a-gltf-model static-body position="0 -1.8 0" src="#wall-obj"></a-gltf-model>
+    <a-gltf-model position="0 -1.8 0" src="#wall-obj"></a-gltf-model>
     <!--    <a-gltf-model position="0 0 0" src="#floor-obj" material="src: #floor-texture"></a-gltf-model>-->
 
     <!--    <a-box position="0 0.5 4" width="3" height="1" depth="1" ammo-body="type: static"-->
