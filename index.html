@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="title">Title</title>
+</head>
+<body>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<!--<script src="js/bundle.js" type="text/javascript"></script>-->
+
+<!--<script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>-->
+
+
+<a-scene style="z-index: auto" physics=" driver: ammo; debug: true; debugDrawMode: 1;">
+        <a-entity id="head" camera look-controls wasd-controls
+                  position="0 3.2 0">
+            <a-entity cursor="rayOrigin: mouse"
+                      position="0 0 -1">
+            </a-entity>
+
+        </a-entity>
+        <a-entity id="box" ammo-body cursor-listener position="0 2.5 0" geometry="primitive: box"
+                  material="color: blue"></a-entity>
+        <a-entity id="nyan" dynamic-body="shape: hull" obj-model="obj: url(nyan-cat.obj)"></a-entity>
+
+        <a-assets>
+            <a-asset-item id="wall-obj" src="models/wall.glb"></a-asset-item>
+            <!--        <a-asset-item id="floor-obj" src="models/floor.glb"></a-asset-item>-->
+        </a-assets>
+
+        <a-gltf-model static-body position="0 0 0" src="#wall-obj"></a-gltf-model>
+        <a-gltf-model position="0 0 0" src="#floor-obj"></a-gltf-model>
+        <a-box position="0 0.5 0" width="3" height="1" depth="1" ammo-body="type: static"
+               ammo-shape="type: box"></a-box>
+
+        <!--    <a-plane static-body></a-plane>-->
+
+</a-scene>
+
+<!--<script src="js/demo_aframe.js"></script>-->
+
+</body>
+<!--<script src="js/demo.js" type="text/babel"></script>-->
+</html>
