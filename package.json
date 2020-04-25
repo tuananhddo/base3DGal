@@ -6,16 +6,21 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "aframe": "^1.0.4",
     "aframe-physics-system": "^4.0.1",
+    "ammo.js": "0.0.10",
+    "browser-resolve": "^1.11.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11",
+    "pug": "^2.0.4",
+    "react": "^16.13.1",
     "uniq": "^1.0.1"
   },
   "devDependencies": {
+    "esmify": "^2.1.1",
     "three": "^0.115.0"
   }
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="title">Title</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!--    <script src="http://kripken.github.io/ammo.js/builds/ammo.wasm.js"></script>-->
+    <!--    <script src="public/js/ammo.wasm.js" type="text/javascript"></script>-->
+
+    <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
+    <!--    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>-->
+    <script src="public/js/aframe-physics-system.js" type="text/javascript"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="public/js/control.js"></script>
+    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+
+
+</head>
+<body>
+
+<a-scene physics="driver: ammo; debug: true; debugDrawMode: 1;">
+    <a-entity id="rig" wasd-controls camera position="0 0 0" look-controls>
+        <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
+    </a-entity>
+    <a-entity
+            position="0 0 -2"
+            geometry="primitive: box"
+            material="color: red"
+            cursor-listener></a-entity>
+    <a-entity
+            position="0 0 -4"
+            geometry="primitive: box"
+            material="color: green"
+            cursor-listener></a-entity>
+</a-scene>
+</body>
+</html>
