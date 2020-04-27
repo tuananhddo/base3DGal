@@ -14,35 +14,26 @@
 
 <a-scene physics=" driver: ammo; debug: true; debugDrawMode: 1;">
     <a-entity id="rig" movement-controls>
-    <a-entity id="head" camera look-controls
-              position="0 1.6 0">
-        <a-entity cursor="rayOrigin: mouse"></a-entity>
-    </a-entity>
+        <a-entity id="head" camera look-controls
+                  position="0 1.6 0">
+            <a-entity cursor="rayOrigin: mouse"></a-entity>
+        </a-entity>
     </a-entity>
     <!--    <a-entity light="type: ambient; color: #CCC"></a-entity>-->
     <!--    <a-entity light="type: point; intensity: 0.75; distance: 50; decay: 2"-->
     <!--              position="0 2 2"></a-entity>-->
 
-    <!--    <a-entity id="box" ammo-body cursor-listener position="0 2.5 4" geometry="primitive: box"-->
-    <!--              material="color: blue"></a-entity>-->
+    <a-entity id="box" scale="8 1 1" ammo-body cursor-listener position="-0.10909 2 -1" geometry="primitive: box"
+              material="color: blue"></a-entity>
     <!--    <a-entity id="nyan" dynamic-body="shape: hull" obj-model="obj: url(nyan-cat.obj)"></a-entity>-->
 
-    <a-assets>
-        <a-asset-item id="wall-obj"
-                      src="models/wall.glb"></a-asset-item>
 
-        <a-asset-item id="floor-obj" src="models/floor.glb"></a-asset-item>
-        <img id="floor-texture" src="textures/floor.jpg">
-
-    </a-assets>
-
-    <a-gltf-model position="0 -1.8 0" src="#wall-obj"></a-gltf-model>
     <!--    <a-gltf-model position="0 0 0" src="#floor-obj" material="src: #floor-texture"></a-gltf-model>-->
 
     <!--    <a-box position="0 0.5 4" width="3" height="1" depth="1" ammo-body="type: static"-->
     <!--           ammo-shape="type: box"></a-box>-->
 
-    <a-plane src="#floor-texture" position="0 0 0" height="1000" width="1000" rotation="-90 0 0"></a-plane>
+<!--    <a-plane src="#floor-texture" position="0 0 0" height="1000" width="1000" rotation="-90 0 0"></a-plane>-->
 </a-scene>
 
 <!--<script src="js/demo_aframe.js"></script>-->
