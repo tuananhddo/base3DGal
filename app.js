@@ -15,7 +15,9 @@ var syncRouter = require('./routes/sync');
 
 var app = express();
 app.use(cors())
-
+app.listen(1998, function () {
+  console.log('Example app listening on port ' + 3000 + '!');
+});
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
