@@ -7,9 +7,25 @@ var fs = require('fs');
 let files;
 
 router.get('/', function (req, res, next) {
-    // res.send('respond with a resource');
-    const data = [{name: 'model1'}, {name: 'models2'}];
-    res.send(JSON.stringify(data))
+    let listFile;
+    fs.readdir(UPLOAD_PATH, (err, files) => {
+        if (err) {
+            res.send(JSON.stringify([]));
+        }
+        // res.send(JSON.stringify(files));
+        let js = JSON.stringify(files);
+        files.forEach(file => {
+            console.log(file);
+        });
+        listFile = files.map((item) => {
+            return {
+                name: item,
+                link: BASE_MODEL_URL + '/' + item
+            }
+        })
+        res.send(listFile);
+
+    });
 });
 const BASE_URL = 'http://localhost:3000';
 const BASE_MODEL_URL = BASE_URL + '/models';
@@ -25,7 +41,7 @@ router.post('/', upload.single('model'), function (req, res, next) {
     // const fullPathInServ = ;;
     const newFullPath = `${UPLOAD_PATH}/${orgName}`;
     fs.renameSync(fullPathInServ, newFullPath);
-    const data = {name: BASE_MODEL_URL + orgName};
+    const data = {name: orgName, link: BASE_MODEL_URL + '/' + orgName};
     res.send(JSON.stringify(data))
 });
 
