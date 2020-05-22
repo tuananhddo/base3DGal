@@ -3,16 +3,27 @@
 <head>
     <meta charset="utf-8">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-<!--    <script src="js/aframe-inspector.js"></script>-->
+    <!--    <script src="js/aframe-inspector.js"></script>-->
+    <script>
+        // alert('')
+        const BASE_URL = window.location.hostname;
+        const scene = document.querySelector('#mainUserScene');
+        scene.setAttribute('inspector', `${BASE_URL}/js/aframe-inspector.min.js`);
+    </script>
 </head>
 <body>
-<a-scene inspector="url: http://localhost:3333/dist/aframe-inspector.min.js">
-    <a-entity id="boxer" scale="1 50 1" rotation="0 2 0" geometry="primitive: cone;" material="color: #1ee12d"></a-entity>
+<!--<a-scene inspector="url: http://localhost:3333/dist/aframe-inspector.min.js">-->
+<a-scene id='mainUserScene' background="color: #FAFAFA">
+
+    <a-entity id="boxer" scale="1 50 1" rotation="0 2 0" geometry="primitive: cone;"
+              material="color: #1ee12d"></a-entity>
     <a-entity id="planer" geometry="primitive: plane;" material="color: blue"></a-entity>
     <a-assets>
-        <a-asset-item id="cityModel" src="https://cdn.aframe.io/test-models/models/glTF-2.0/virtualcity/VC.gltf"></a-asset-item>
+        <a-asset-item id="cityModel"
+                      src="https://cdn.aframe.io/test-models/models/glTF-2.0/virtualcity/VC.gltf"></a-asset-item>
     </a-assets>
-    <a-entity id="xca" position="0.5 0 0" visible="true" scale="0.2 0.2 0.2" gltf-model="#cityModel" modify-materials></a-entity>
+    <a-entity id="xca" position="0.5 0 0" visible="true" scale="0.2 0.2 0.2" gltf-model="#cityModel"
+              modify-materials></a-entity>
 </a-scene>
 </body>
 </html>
