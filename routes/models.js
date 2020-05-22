@@ -20,7 +20,7 @@ router.get('/', function (req, res, next) {
         listFile = files.map((item) => {
             return {
                 name: item,
-                link: BASE_MODEL_URL + '/' + item
+                link: item
             }
         })
         res.send(listFile);
