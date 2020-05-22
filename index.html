@@ -20,10 +20,12 @@
               modify-materials></a-entity>
 </a-scene>
 <script>
-    // alert('')
-    const BASE_URL = window.location.hostname;
+    const BASE_URL = window.location.href;
     const scene = document.querySelector('#mainUserScene');
-    scene.setAttribute('inspector', `${BASE_URL}/js/aframe-inspector.min.js`);
+    const inspectorURL = `url: ${BASE_URL}js/aframe-inspector.min.js`;
+    console.log(BASE_URL)
+    console.log(inspectorURL)
+    scene.setAttribute('inspector', inspectorURL);
 </script>
 </body>
 </html>
