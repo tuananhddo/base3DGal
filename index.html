@@ -6,18 +6,20 @@
     <!--    <script src="js/aframe-inspector.js"></script>-->
 </head>
 <body>
-<!--<a-scene inspector="url: http://localhost:3333/dist/aframe-inspector.min.js">-->
+<!--<a-scene inspector="url: http://localhost:3333/dist/aframe-inspector.js">-->
 <a-scene id='mainUserScene' background="color: #FAFAFA">
 
-    <a-entity id="boxer" scale="1 50 1" rotation="0 2 0" geometry="primitive: cone;"
-              material="color: #1ee12d"></a-entity>
+    <a-entity id="boxer" scale="1 5 1" rotation="-8.1 2 0" geometry="primitive: cylinder;"
+              material="color: #ad3ec1"></a-entity>
     <a-entity id="planer" geometry="primitive: plane;" material="color: blue"></a-entity>
     <a-assets>
         <a-asset-item id="cityModel"
                       src="https://cdn.aframe.io/test-models/models/glTF-2.0/virtualcity/VC.gltf"></a-asset-item>
-    </a-assets>
-    <a-entity id="xca" position="0.5 0 0" visible="true" scale="0.2 0.2 0.2" gltf-model="#cityModel"
-              modify-materials></a-entity>
+<a-asset-item id='bx2.glb' src='http://localhost:3000/models/bx2.glb' ></a-asset-item>
+</a-assets>
+    <!--    <a-entity id="xca" position="0.5 0 0" visible="true" scale="0.2 0.2 0.2" gltf-model="#cityModel"-->
+    <!--              modify-materials></a-entity>-->
+
 </a-scene>
 <script>
     const BASE_URL = window.location.href;
@@ -27,22 +29,5 @@
     console.log(inspectorURL)
     scene.setAttribute('inspector', inspectorURL);
 </script>
-</body>
-</html>
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title id="title">Title</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>-->
-<!--<a-scene>-->
-<!--    <a-entity id="boxer" material="color: #7bcd32" scale="2 1 1" position="-0.109 2 -1" geometry="primitive: box"-->
-<!--              material="color: #ce3194"></a-entity>-->
-
-<!--</a-scene>-->
-
-
 </body>
 </html>

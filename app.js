@@ -3,10 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var cors = require('cors')
+var cors = require('cors');
 var corsOptions = {
   origin: '*',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  optionsSuccessStatus: 99 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
