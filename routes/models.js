@@ -41,7 +41,7 @@ router.post('/', upload.single('model'), function (req, res, next) {
     // const fullPathInServ = ;;
     const newFullPath = `${UPLOAD_PATH}/${orgName}`;
     fs.renameSync(fullPathInServ, newFullPath);
-    const data = {name: orgName, link: BASE_MODEL_URL + '/' + orgName};
+    const data = {name: orgName, link: orgName};
     res.send(JSON.stringify(data))
 });
 
