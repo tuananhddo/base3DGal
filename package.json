@@ -28,6 +28,6 @@
     "@babel/preset-env": "^7.9.6",
     "@babel/register": "^7.9.0",
     "esmify": "^2.1.1",
-    "three": "^0.115.0"
+    "three": "^0.125.0"
   }
 }
